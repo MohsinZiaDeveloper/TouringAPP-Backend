@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import morgan from "morgan";
 import userRoutes from "./routes/user.js";
+import tourRouter from "./routes/tour.js";
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/users", userRoutes); // http://localhost:5000/users/signup
+app.use("/tour", tourRouter);
 
 const MONGODB_URL =
   "mongodb+srv://Mohsinzia:Mohsin123456@cluster0.7cbprpg.mongodb.net/tour_db?retryWrites=true&w=majority";
